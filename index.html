@@ -2,194 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mike Movers & Cleaners</title>
-  <link rel="icon" href="https://i.postimg.cc/8zRVF4Lh/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>On-Time Movers</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #004aad;
-      color: #fff;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero {
-      background: url('https://i.postimg.cc/NMCxkL5K/Bg.png') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 20px;
-    }
-    .section {
-      padding: 60px 40px;
-      background: white;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .service-card {
-      background: #f1f1f1;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .service-card h3::before {
-      content: "\1F69A  ";
-    }
-    .testimonials {
-      background: #eaf0ff;
-      padding: 40px;
-      text-align: center;
-    }
-    .testimonial {
-      max-width: 600px;
-      margin: auto;
-      font-style: italic;
-    }
-    .contact-form {
-      max-width: 600px;
-      margin: auto;
-      background: #f1f1f1;
-      padding: 30px;
-      border-radius: 8px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .contact-form button {
-      padding: 10px 20px;
-      background-color: #004aad;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .contact-form button:hover {
-      background-color: #00367a;
-    }
-    .map {
-      margin: 40px auto;
-      max-width: 600px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background: #002a66;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://i.postimg.cc/7PJn7CGj/logo.png" />
 </head>
 <body>
-
   <header>
-    <h2><img src="https://i.postimg.cc/NMpmvK3k/logo-cleaners.png" alt="logo" style="height:40px; vertical-align:middle;"> Mike Demo Web for Movers & Cleaners</h2>
+    <h2><img src="https://i.postimg.cc/7PJn7CGj/logo.png" alt="logo" class="logo">OnTime Movers</h2>
     <nav>
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Professional Moving & Cleaning</h1>
-    <p>Serving Juja, Nairobi & beyond. Trusted, insured, and affordable.</p>
+    <div>
+      <h1>Trusted. Affordable. Always On Time.</h1>
+      <p id="typewriter" style="
+			font-size: 25px;
+			color: #ff8800;
+			"></p>
+      <button onclick="openModal()" class="quote-btn">Get a Free Quote</button>
+    </div>
   </section>
 
-  <section class="section" id="services">
-    <h2>Our Services</h2>
+  <section class="section" style="
+    background: linear-gradient(187deg, #001129c7, #ff872b);
+	">
+    <h2>Our Core Services</h2>
     <div class="services">
-      <div class="service-card">
-        <h3>Home Moving</h3>
-        <p>Secure packing and careful transportation</p>
-      </div>
-      <div class="service-card">
-        <h3>Deep Cleaning</h3>
-        <p>Detailed home and office cleaning solutions</p>
-      </div>
-      <div class="service-card">
-        <h3>Fumigation</h3>
-        <p>Eco-friendly pest control for your peace of mind</p>
-      </div>
+      <div class="service-card"><h3>🚚 Moving Services</h3><p>Efficient, safe and professional home or office relocations.</p></div>
+      <div class="service-card"><h3>Furniture Assembly</h3><p>Dismantling and assembling made easy.</p></div>
+      <div class="service-card"><h3>Vehicle Transport</h3><p>We are also specialized in vehicle transportation across different Locations.</p></div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
+  <section class="section" style="background:#eaf8ff;">
+    <h2>Why Choose On-Time Movers?</h2>
+    <div class="services">
+      <div class="service-card"><h3>✅ Reliable</h3><p>Always on-time and responsive to your needs.</p></div>
+      <div class="service-card"><h3>💰 Affordable</h3><p>Best pricing without compromising service quality.</p></div>
+      <div class="service-card"><h3>🔒 Fully Insured</h3><p>We protect your belongings every step of the way.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What Clients Say</h2>
     <div class="testimonial">
-      <p>"Shwari Movers were professional and quick. Highly recommend them!"</p>
-      <strong>- Sarah W., Thika</strong>
+      <p>"The best movers I’ve ever used — friendly, fast and affordable!"</p>
+      <strong>- Jane K., Nairobi</strong>
+    </div>
+    <div class="testimonial">
+      <p>"They left my new home spotless after construction. Excellent work!"</p>
+      <strong>- Kevin M., Ruiru</strong>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <h2>Get a Free Quote</h2>
-    <form class="contact-form" action="https://formspree.io/f/mqalkazl" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="tel" name="phone" placeholder="Phone Number" />
-      <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
-      <button type="submit">Submit</button>
-    </form>
+  <section class="section">
+    <h2>We Serve These Areas</h2>
+    <p style="text-align:center;">Nairobi, Juja, Thika, Ruiru, Kiambu, and surrounding areas.</p>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=Nairobi,+Kenya&output=embed" width="100%" height="300" style="border:0;"></iframe>
+    </div>
   </section>
 
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.319103800612!2d37.0095333!3d-1.1023966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fa6e0b6b011%3A0x3cbac2e27a35064a!2sJuja%2C%20Kenya!5e0!3m2!1sen!2ske!4v1652453443152!5m2!1sen!2ske" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <!-- Quote Modal -->
+  <div id="quoteModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Request a Quote</h2>
+      <form action="https://formspree.io/f/mqalkazl" method="POST">
+        <select name="service" required>
+          <option value="">-- Choose a Service --</option>
+		  <option>Free consultation</option>
+          <option>Home Moving</option>
+          <option>Office Moving</option>
+          <option>Vehicle Transport</option>
+          <option>Furniture Assembly</option>
+        </select>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <textarea name="message" placeholder="Additional Info (optional)"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
   </div>
 
-  <a class="whatsapp-float" href="https://wa.me/254712345678" target="_blank" title="Chat on WhatsApp">
-    ☎
-  </a>
-
   <footer>
-    <p>&copy; 2025 Mike Demo Movers & Cleaners | Juja, Kenya</p>
+    <p>&copy; 2025 On Time Movers | Nairobi, Kenya</p>
   </footer>
+  <a class="whatsapp-float" href="https://wa.me/254718809772" target="_blank">☎</a>
 
+  <script>
+    const text = "Serving Nairobi, Juja, Thika, Ruiru & more";
+    const el = document.getElementById("typewriter");
+    let index = 0;
+    let forward = true;
+    function type() {
+      if (forward) {
+        if (index <= text.length) {
+          el.textContent = text.substring(0, index++);
+        } else {
+          forward = false;
+          setTimeout(type, 1500);
+          return;
+        }
+      } else {
+        if (index >= 0) {
+          el.textContent = text.substring(0, index--);
+        } else {
+          forward = true;
+        }
+      }
+      setTimeout(type, 100);
+    }
+    type();
+
+    function openModal() {
+      document.getElementById("quoteModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("quoteModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById("quoteModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
