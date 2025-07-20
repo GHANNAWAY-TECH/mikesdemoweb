@@ -7,10 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="https://i.postimg.cc/7PJn7CGj/logo.png" />
+  <meta name="description" content="On-Time Movers offers professional and affordable moving, vehicle transport, and furniture assembly services in Nairobi and surrounding areas.">
 </head>
 <body>
   <header>
-    <h2><img src="https://i.postimg.cc/7PJn7CGj/logo.png" alt="logo" class="logo">OnTime Movers</h2>
+    <h2><img src="https://i.postimg.cc/7PJn7CGj/logo.png" alt="OnTime Movers Logo" class="logo">OnTime Movers</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -19,44 +20,51 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div>
       <h1>Trusted. Affordable. Always On Time.</h1>
-      <p id="typewriter" style="
-			font-size: 25px;
-			color: #ff8800;
-			"></p>
+      <p id="typewriter" style="font-size: 25px; color: #ff8800;"></p>
       <button onclick="openModal()" class="quote-btn">Get a Free Quote</button>
     </div>
   </section>
 
-  <section class="section" style="
-    background: linear-gradient(187deg, #001129c7, #ff872b);
-	">
+  <section class="section" style="background: linear-gradient(187deg, #001129c7, #ff872b);">
     <h2>Our Core Services</h2>
     <div class="services">
-      <div class="service-card"><h3>🚚 Moving Services</h3><p>Efficient, safe and professional home or office relocations.</p></div>
-      <div class="service-card"><h3>Furniture Assembly</h3><p>Dismantling and assembling made easy.</p></div>
-      <div class="service-card"><h3>Vehicle Transport</h3><p>We are also specialized in vehicle transportation across different Locations.</p></div>
+      <div class="service-card fade-in">
+        <img src="images/moving3.jpg" alt="Moving Truck" class="service-img">
+        <h3>🚚 Moving Services</h3>
+        <p>Efficient, safe and professional home or office relocations.</p>
+      </div>
+      <div class="service-card fade-in">
+        <img src="images/furniture.png" alt="Furniture" class="service-img">
+        <h3>Furniture Assembly</h3>
+        <p>Dismantling and assembling made easy.</p>
+      </div>
+      <div class="service-card fade-in">
+        <img src="images/vehicle.png" alt="Vehicle Transport" class="service-img">
+        <h3>Vehicle Transport</h3>
+        <p>We are also specialized in vehicle transportation across different Locations.</p>
+      </div>
     </div>
   </section>
 
   <section class="section" style="background:#eaf8ff;">
     <h2>Why Choose On-Time Movers?</h2>
     <div class="services">
-      <div class="service-card"><h3>✅ Reliable</h3><p>Always on-time and responsive to your needs.</p></div>
-      <div class="service-card"><h3>💰 Affordable</h3><p>Best pricing without compromising service quality.</p></div>
-      <div class="service-card"><h3>🔒 Fully Insured</h3><p>We protect your belongings every step of the way.</p></div>
+      <div class="service-card fade-in"><h3>✅ Reliable</h3><p>Always on-time and responsive to your needs.</p></div>
+      <div class="service-card fade-in"><h3>💰 Affordable</h3><p>Best pricing without compromising service quality.</p></div>
+      <div class="service-card fade-in"><h3>🔒 Fully Insured</h3><p>We protect your belongings every step of the way.</p></div>
     </div>
   </section>
 
   <section class="section">
     <h2>What Clients Say</h2>
-    <div class="testimonial">
+    <div class="testimonial fade-in">
       <p>"The best movers I’ve ever used — friendly, fast and affordable!"</p>
       <strong>- Jane K., Nairobi</strong>
     </div>
-    <div class="testimonial">
+    <div class="testimonial fade-in">
       <p>"They left my new home spotless after construction. Excellent work!"</p>
       <strong>- Kevin M., Ruiru</strong>
     </div>
@@ -65,7 +73,7 @@
   <section class="section">
     <h2>We Serve These Areas</h2>
     <p style="text-align:center;">Nairobi, Juja, Thika, Ruiru, Kiambu, and surrounding areas.</p>
-    <div class="map">
+    <div class="map fade-in">
       <iframe src="https://www.google.com/maps?q=Nairobi,+Kenya&output=embed" width="100%" height="300" style="border:0;"></iframe>
     </div>
   </section>
@@ -78,7 +86,7 @@
       <form action="https://formspree.io/f/mqalkazl" method="POST">
         <select name="service" required>
           <option value="">-- Choose a Service --</option>
-		  <option>Free consultation</option>
+          <option>Free consultation</option>
           <option>Home Moving</option>
           <option>Office Moving</option>
           <option>Vehicle Transport</option>
@@ -95,9 +103,38 @@
   <footer>
     <p>&copy; 2025 On Time Movers | Nairobi, Kenya</p>
   </footer>
-  <a class="whatsapp-float" href="https://wa.me/254718809772" target="_blank">☎</a>
+
+  <!-- Floating WhatsApp Chat Button with Pulse -->
+  <a href="https://wa.me/254718809772" target="_blank" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: pulse 2s infinite;
+  ">
+    <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" style="margin-right: 10px;" alt="WhatsApp Icon"/>
+    Chat with us
+  </a>
+
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+  </style>
 
   <script>
+    // Typewriter Effect
     const text = "Serving Nairobi, Juja, Thika, Ruiru & more";
     const el = document.getElementById("typewriter");
     let index = 0;
@@ -116,24 +153,60 @@
           el.textContent = text.substring(0, index--);
         } else {
           forward = true;
+          setTimeout(type, 1000);
+          return;
         }
       }
       setTimeout(type, 100);
     }
     type();
 
+    // Modal Controls
     function openModal() {
       document.getElementById("quoteModal").style.display = "block";
+      document.body.style.overflow = "hidden";
     }
     function closeModal() {
       document.getElementById("quoteModal").style.display = "none";
+      document.body.style.overflow = "auto";
     }
     window.onclick = function(event) {
       const modal = document.getElementById("quoteModal");
       if (event.target == modal) {
         modal.style.display = "none";
+        document.body.style.overflow = "auto";
       }
     };
+
+    // Scroll Fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Rotating Hero Background Images
+    const hero = document.getElementById("hero");
+    const images = [
+      "images/moving1.png",
+      "images/moving2.png",
+      "images/moving3.jpg"
+    ];
+    let current = 0;
+    setInterval(() => {
+      hero.style.backgroundImage = `url('${images[current]}')`;
+      current = (current + 1) % images.length;
+    }, 6000);
   </script>
 </body>
 </html>
