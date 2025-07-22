@@ -3,210 +3,404 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>On-Time Movers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="https://i.postimg.cc/7PJn7CGj/logo.png" />
-  <meta name="description" content="On-Time Movers offers professional and affordable moving, vehicle transport, and furniture assembly services in Nairobi and surrounding areas.">
+  <title>OnTime Movers - Reliable Moving Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: #fff; color: #333; }
+
+    header {
+      background: #1e2a38;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s ease;
+    }
+    header nav a:hover { color: #ffa726; }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      animation: bgChange 20s infinite ease-in-out;
+    }
+    @keyframes bgChange {
+      0%, 100% { background-image: url('1000796208.jpg'); }
+      25% { background-image: url('1000796210.jpg'); }
+      50% { background-image: url('moving2.png'); }
+      75% { background-image: url('moving1.png'); }
+    }
+
+    .typing-text {
+      display: inline-block;
+      color: #ffa726;
+      font-weight: bold;
+      border-right: 2px solid #ffa726;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 8s steps(40, end) infinite alternate;
+    }
+    @keyframes typing {
+      0% { width: 0; }
+      45% { width: 100%; }
+      55% { width: 100%; }
+      100% { width: 0; }
+    }
+
+    .hero-content {
+      background-color: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 15px;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .cta-btn {
+      background: #ffa726;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta-btn:hover { background: #ff9800; }
+
+    .why-section, .services-section {
+      background: #1e2a38;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .why-section h2, .services-section h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .features, .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .feature, .service {
+      background-color: #263445;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .service i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffa726;
+      transition: transform 0.4s ease;
+    }
+    .service:hover i {
+      transform: scale(1.3);
+    }
+    .feature h3, .service h3 {
+      color: #ffa726;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-section {
+      background: #ffa726;
+      color: #000;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .cta-section button {
+      background-color: #1e2a38;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta-section button:hover {
+      background-color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e2a38;
+      color: white;
+    }
+
+    .floating-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+    }
+    .floating-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .floating-btn a:hover {
+      transform: scale(1.1);
+    }
+
+    /* Contact Slide Form */
+    .contact-slide-form {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 350px;
+      max-width: 100%;
+      height: 100vh;
+      background-color: rgba(30, 42, 56, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+      padding: 30px 25px;
+      transition: right 0.5s ease;
+      z-index: 999;
+      color: white;
+      overflow-y: auto;
+    }
+    .contact-slide-form.active {
+      right: 0;
+    }
+    .contact-slide-form h2 {
+      margin-top: 20px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #ffa726;
+    }
+    .contact-slide-form input,
+    .contact-slide-form textarea {
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      background: #ffffff10;
+      border: 1px solid #ffa72655;
+      border-radius: 8px;
+      color: white;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    .contact-slide-form textarea {
+      height: 100px;
+      resize: none;
+    }
+    .contact-slide-form label {
+      display: block;
+      margin: 8px 0 4px;
+      font-size: 14px;
+    }
+    .contact-slide-form input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    .contact-slide-form .checkbox-group {
+      margin-bottom: 15px;
+    }
+    .contact-slide-form button[type="submit"] {
+      background-color: #ffa726;
+      border: none;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      width: 100%;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-slide-form button[type="submit"]:hover {
+      background-color: #ff9800;
+    }
+    .close-form {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      color: #fff;
+      font-size: 22px;
+      border: none;
+      cursor: pointer;
+    }
+	.collapse-handle {
+	  position: absolute;
+	  left: -40px;
+	  top: 50%;
+	  transform: translateY(-50%) rotate(90deg);
+	  background-color: #ffa726;
+	  color: white;
+	  border: none;
+	  padding: 8px 12px;
+	  font-weight: bold;
+	  border-radius: 6px 6px 0 0;
+	  cursor: pointer;
+	  z-index: 999;
+	  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	}
+
+	
+  </style>
 </head>
 <body>
+
   <header>
-    <h2><img src="https://i.postimg.cc/7PJn7CGj/logo.png" alt="OnTime Movers Logo" class="logo">OnTime Movers</h2>
+    <div class="logo"><strong>OnTime Movers</strong></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <div>
-      <h1>Trusted. Affordable. Always On Time.</h1>
-      <p id="typewriter" style="font-size: 25px; color: #ff8800;"></p>
-      <button onclick="openModal()" class="quote-btn">Get a Free Quote</button>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>OnTime Movers</h1>
+      <div class="typing-text" id="typing"></div>
+      <p>Professional, affordable moving services tailored to your needs.</p>
+      <button class="cta-btn open-contact-form">Get a Free Quote</button>
     </div>
   </section>
 
-  <section class="section" style="background: linear-gradient(187deg, #001129c7, #ff872b);">
-    <h2>Our Core Services</h2>
-    <div class="services">
-      <div class="service-card fade-in">
-        <img src="images/moving.jpg" alt="Moving Truck" class="service-img">
-        <h3>🚚 Moving Services</h3>
-        <p>Efficient, safe and professional home or office relocations.</p>
-      </div>
-      <div class="service-card fade-in">
-        <img src="images/furniture.png" alt="Furniture" class="service-img">
-        <h3>Furniture Assembly</h3>
-        <p>Dismantling and assembling made easy.</p>
-      </div>
-      <div class="service-card fade-in">
-        <img src="images/vehicle.png" alt="Vehicle Transport" class="service-img">
-        <h3>Vehicle Transport</h3>
-        <p>We are also specialized in vehicle transportation across different Locations.</p>
-      </div>
+  <section class="why-section" id="about">
+    <h2>Why Choose OnTime Movers?</h2>
+    <div class="features">
+      <div class="feature animate"><h3>Punctuality</h3><p>We arrive on time, every time.</p></div>
+      <div class="feature animate"><h3>Trained Professionals</h3><p>Experienced and careful team.</p></div>
+      <div class="feature animate"><h3>Transparent Pricing</h3><p>No hidden fees or surprises.</p></div>
+      <div class="feature animate"><h3>Customer Satisfaction</h3><p>Trusted by hundreds of happy clients.</p></div>
     </div>
   </section>
 
-  <section class="section" style="background:#eaf8ff;">
-    <h2>Why Choose On-Time Movers?</h2>
-    <div class="services">
-      <div class="service-card fade-in"><h3>✅ Reliable</h3><p>Always on-time and responsive to your needs.</p></div>
-      <div class="service-card fade-in"><h3>💰 Affordable</h3><p>Best pricing without compromising service quality.</p></div>
-      <div class="service-card fade-in"><h3>🔒 Fully Insured</h3><p>We protect your belongings every step of the way.</p></div>
+  <section class="services-section" id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service animate"><i class="fas fa-box-open"></i><h3>Packing & Unpacking</h3><p>We handle your items with care.</p></div>
+      <div class="service animate"><i class="fas fa-truck-moving"></i><h3>Local Moving</h3><p>Efficient moves within the city.</p></div>
+      <div class="service animate"><i class="fas fa-building"></i><h3>Office Relocation</h3><p>Minimal downtime for businesses.</p></div>
+      <div class="service animate"><i class="fas fa-warehouse"></i><h3>Storage Solutions</h3><p>Secure short/long-term options.</p></div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>What Clients Say</h2>
-    <div class="testimonial fade-in">
-      <p>"The best movers I’ve ever used — friendly, fast and affordable!"</p>
-      <strong>- Jane K., Nairobi</strong>
-    </div>
-    <div class="testimonial fade-in">
-      <p>"They left my new home spotless after construction. Excellent work!"</p>
-      <strong>- Kevin M., Ruiru</strong>
-    </div>
+  <section class="cta-section" id="contact">
+    <h2>Ready to Move with Ease?</h2>
+    <p>Contact OnTime Movers today for a seamless, stress-free moving experience!</p>
+    <button class="open-contact-form">Book Your Move</button>
   </section>
-
-  <section class="section">
-    <h2>We Serve These Areas</h2>
-    <p style="text-align:center;">Nairobi, Juja, Thika, Ruiru, Kiambu, and surrounding areas.</p>
-    <div class="map fade-in">
-      <iframe src="https://www.google.com/maps?q=Nairobi,+Kenya&output=embed" width="100%" height="300" style="border:0;"></iframe>
-    </div>
-  </section>
-
-  <!-- Quote Modal -->
-  <div id="quoteModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Request a Quote</h2>
-      <form action="https://formspree.io/f/mqalkazl" method="POST">
-        <select name="service" required>
-          <option value="">-- Choose a Service --</option>
-          <option>Free consultation</option>
-          <option>Home Moving</option>
-          <option>Office Moving</option>
-          <option>Vehicle Transport</option>
-          <option>Furniture Assembly</option>
-        </select>
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="tel" name="phone" placeholder="Phone Number" required />
-        <textarea name="message" placeholder="Additional Info (optional)"></textarea>
-        <button type="submit">Submit Request</button>
-      </form>
-    </div>
-  </div>
 
   <footer>
-    <p>&copy; 2025 On Time Movers | Nairobi, Kenya</p>
+    &copy; 2025 OnTime Movers. All rights reserved.
   </footer>
 
-  <!-- Floating WhatsApp Chat Button with Pulse -->
-  <a href="https://wa.me/254718809772" target="_blank" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 9999;
-    animation: pulse 2s infinite;
-  ">
-    <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" style="margin-right: 10px;" alt="WhatsApp Icon"/>
-    Chat with us
-  </a>
+  <!-- Floating WhatsApp -->
+  <div class="floating-btn">
+    <a href="https://wa.me/254712345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 
-  <style>
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-  </style>
+  <!-- Sliding Contact Form -->
+  <div class="contact-slide-form" id="slideForm">
+    <button class="collapse-handle" id="collapseBtn">&gt;&gt;</button>
+    <h2>Let's Get You Moving</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="service" value="Packing"> Packing & Unpacking</label>
+        <label><input type="checkbox" name="service" value="Moving"> Local Moving</label>
+        <label><input type="checkbox" name="service" value="Office"> Office Relocation</label>
+        <label><input type="checkbox" name="service" value="Storage"> Storage Solutions</label>
+      </div>
+      <textarea placeholder="Tell us what you need..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
   <script>
-    // Typewriter Effect
-    const text = "Serving Nairobi, Juja, Thika, Ruiru & more";
-    const el = document.getElementById("typewriter");
-    let index = 0;
-    let forward = true;
+    const animateEls = document.querySelectorAll('.animate');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    animateEls.forEach(el => observer.observe(el));
+
+    // Typing animation
+    const text = "Your Stress-Free Move, Right on Schedule";
+    const el = document.querySelector(".typing-text");
+    let index = 0, forward = true;
     function type() {
       if (forward) {
-        if (index <= text.length) {
-          el.textContent = text.substring(0, index++);
-        } else {
-          forward = false;
-          setTimeout(type, 1500);
-          return;
-        }
+        el.textContent = text.slice(0, index++);
+        if (index > text.length) { forward = false; setTimeout(type, 1000); return; }
       } else {
-        if (index >= 0) {
-          el.textContent = text.substring(0, index--);
-        } else {
-          forward = true;
-          setTimeout(type, 1000);
-          return;
-        }
+        el.textContent = text.slice(0, index--);
+        if (index < 0) { forward = true; setTimeout(type, 500); return; }
       }
       setTimeout(type, 100);
     }
     type();
 
-    // Modal Controls
-    function openModal() {
-      document.getElementById("quoteModal").style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal() {
-      document.getElementById("quoteModal").style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-    window.onclick = function(event) {
-      const modal = document.getElementById("quoteModal");
-      if (event.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      }
-    };
+    // Slide form logic
+    const slideForm = document.getElementById("slideForm");
+    const openBtns = document.querySelectorAll('.open-contact-form');
+    const closeBtn = document.getElementById("closeForm");
+	document.getElementById('collapseBtn').addEventListener('click', () => {
+	  slideForm.classList.remove('active');
+	});
 
-    // Scroll Fade-in
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        slideForm.classList.add('active');
       });
-    }, appearOptions);
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
     });
 
-    // Rotating Hero Background Images
-    const hero = document.getElementById("hero");
-    const images = [
-      "images/moving1.png",
-      "images/moving2.png",
-      "images/moving3.jpg"
-    ];
-    let current = 0;
-    setInterval(() => {
-      hero.style.backgroundImage = `url('${images[current]}')`;
-      current = (current + 1) % images.length;
-    }, 6000);
+    closeBtn.addEventListener('click', () => {
+      slideForm.classList.remove('active');
+    });
   </script>
 </body>
 </html>
