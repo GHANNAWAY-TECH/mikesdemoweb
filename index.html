@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OnTime Movers - Reliable Moving Services</title>
+  <meta name="description" content="OnTime Movers offers reliable, professional, and affordable moving services. Get a free quote for local moving, office relocation, packing, unpacking, and storage solutions. Your stress-free move, right on schedule.">
+  <meta name="keywords" content="OnTime Movers, moving services, local moving, office relocation, packing, unpacking, storage solutions, professional movers, affordable movers, reliable movers, Kenya movers, stress-free move">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
@@ -177,15 +179,15 @@
       background: #ff9800;
     }
 
-    /* Section Styling (Why Choose Us, Services) */
-    .why-section, .services-section {
+    /* Section Styling (Why Choose Us, Services, Testimonials) */
+    .why-section, .services-section, .testimonials-section { /* Added .testimonials-section */
       background: #1e2a38;
       color: white;
       padding: 3rem 2rem;
       text-align: center;
     }
 
-    .why-section h2, .services-section h2 {
+    .why-section h2, .services-section h2, .testimonials-section h2 { /* Added .testimonials-section h2 */
       margin-bottom: 2rem;
       font-size: 2rem;
     }
@@ -221,6 +223,65 @@
     .feature h3, .service h3 {
       color: #ffa726;
       margin-bottom: 0.5rem;
+    }
+
+    /* Testimonials Section Specific Styles */
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        background-color: #263445;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0; /* For scroll animation */
+        transform: translateY(40px); /* For scroll animation */
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .testimonial-card .quote {
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        color: #eee;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .testimonial-card .quote::before {
+        content: '\201C'; /* Left double quotation mark */
+        font-size: 3rem;
+        color: #ffa726;
+        position: absolute;
+        left: 0;
+        top: -10px;
+        line-height: 1;
+    }
+
+    .testimonial-card .author {
+        font-weight: bold;
+        color: #ffa726;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+
+    .testimonial-card .stars {
+        color: #ffa726;
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
     }
 
     /* Call-to-Action Section */
@@ -410,7 +471,7 @@
       left: -50px; /* Adjusted position */
       top: 50%;
       transform: translateY(-50%) rotate(90deg); /* Rotated for tab effect */
-      background-color: #2634457a;
+      background-color: #2634457a; /* Changed to match form background */
       color: white;
       border: none;
       padding: 10px 18px; /* Larger padding */
@@ -503,6 +564,7 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a> <!-- Added Testimonials link -->
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -537,10 +599,46 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card animate">
+        <p class="quote">"OnTime Movers made our relocation absolutely stress-free! The team was incredibly efficient, careful, and friendly. Everything arrived perfectly."</p>
+        <div class="author">- Sarah M.</div>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+      </div>
+      <div class="testimonial-card animate">
+        <p class="quote">"Professional and punctual, just as their name suggests! They handled my delicate items with such care. Highly recommend their services for any move."</p>
+        <div class="author">- John P.</div>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+      </div>
+      <div class="testimonial-card animate">
+        <p class="quote">"From packing to delivery, OnTime Movers exceeded my expectations. Their transparent pricing and excellent communication made the whole process easy."</p>
+        <div class="author">- Emily R.</div>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+      <div class="testimonial-card animate">
+        <p class="quote">"I was worried about moving my office, but OnTime Movers ensured minimal disruption. They were fast, organized, and very professional. Fantastic job!"</p>
+        <div class="author">- David L. (Business Owner)</div>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonials Section -->
+
   <section class="cta-section" id="contact">
     <h2>Ready to Move with Ease?</h2>
     <p>Contact OnTime Movers today for a seamless, stress-free moving experience!</p>
-    <button class="cta-btn open-contact-form">Book Your Move</button>
+    <button class="open-contact-form">Book Your Move</button>
   </section>
 
   <footer>
@@ -555,7 +653,7 @@
     <button class="collapse-handle" id="collapseBtn">Get Quote</button>
     <button class="close-form-btn" id="closeFormBtn"><i class="fas fa-times"></i></button>
     <h2>Let's Get You Moving</h2>
-    <form>
+    <form id="contactForm">
       <label for="form-name">Your Name</label>
       <input type="text" id="form-name" placeholder="John Doe" required>
 
@@ -574,6 +672,7 @@
       <textarea id="form-message" placeholder="e.g., I need to move a 2-bedroom apartment from Westlands to Kilimani on August 10th."></textarea>
       
       <button type="submit">Send Message</button>
+
     </form>
   </div>
 
