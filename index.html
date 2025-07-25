@@ -7,9 +7,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background-color: #fff; color: #333; }
+    /* Universal Box-Sizing and Smooth Scroll */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
+    /* Body Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+      overflow-x: hidden; /* Prevent horizontal scroll due to slide form */
+    }
+
+    /* Overlay for when the form is active */
+    body.form-active::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      z-index: 998; /* Below form, above content */
+      transition: opacity 0.5s ease;
+      opacity: 1;
+    }
+
+    /* Header Styles */
     header {
       background: #1e2a38;
       color: #ffa726;
@@ -27,6 +55,7 @@
       font-weight: bold;
     }
 
+    /* Navigation Styles */
     nav {
       display: flex;
       gap: 20px;
@@ -38,8 +67,11 @@
       transition: color 0.3s ease;
     }
 
-    nav a:hover { color: #ffa726; }
+    nav a:hover {
+      color: #ffa726;
+    }
 
+    /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
       background: none;
@@ -49,6 +81,7 @@
       cursor: pointer;
     }
 
+    /* Media Query for Mobile Navigation */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -56,14 +89,14 @@
 
       nav {
         width: 100%;
-        display: none;
+        display: none; /* Hidden by default on mobile */
         flex-direction: column;
         background-color: #1e2a38;
         padding-top: 10px;
       }
 
       nav.active {
-        display: flex;
+        display: flex; /* Shown when active */
       }
 
       nav a {
@@ -73,6 +106,7 @@
       }
     }
 
+    /* Hero Section Styles */
     .hero {
       height: 100vh;
       display: flex;
@@ -83,9 +117,10 @@
       text-align: center;
       background-size: cover;
       background-position: center;
-      animation: bgChange 20s infinite ease-in-out;
+      animation: bgChange 20s infinite ease-in-out; /* Background image animation */
     }
 
+    /* Keyframes for Background Image Change */
     @keyframes bgChange {
       0%, 100% { background-image: url('images/1000796208.jpg'); }
       25% { background-image: url('images/1000796210.jpg'); }
@@ -93,6 +128,7 @@
       75% { background-image: url('images/moving1.png'); }
     }
 
+    /* Typing Text Effect */
     .typing-text {
       display: inline-block;
       color: #ffa726;
@@ -100,23 +136,20 @@
       border-right: 2px solid #ffa726;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 8s steps(40, end) infinite alternate;
+      /* Removed animation property here, controlled by JS */
     }
 
-    @keyframes typing {
-      0% { width: 0; }
-      45% { width: 100%; }
-      55% { width: 100%; }
-      100% { width: 0; }
-    }
+    /* Removed @keyframes typing, controlled by JS */
 
+    /* Hero Content Container */
     .hero-content {
       background-color: rgba(0,0,0,0.6);
       padding: 2rem;
       border-radius: 15px;
-      animation: fadeIn 2s ease;
+      animation: fadeIn 2s ease; /* Fade-in animation */
     }
 
+    /* Keyframes for Fade-in Effect */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -124,6 +157,8 @@
 
     .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
     .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+    /* Call-to-Action Button */
     .cta-btn {
       background: #ffa726;
       padding: 0.8rem 1.8rem;
@@ -133,10 +168,16 @@
       border-radius: 30px;
       cursor: pointer;
       transition: background 0.3s ease;
+      text-decoration: none; /* For anchor tags */
+      color: white; /* For anchor tags */
+      display: inline-block; /* For anchor tags */
     }
 
-    .cta-btn:hover { background: #ff9800; }
+    .cta-btn:hover {
+      background: #ff9800;
+    }
 
+    /* Section Styling (Why Choose Us, Services) */
     .why-section, .services-section {
       background: #1e2a38;
       color: white;
@@ -149,19 +190,21 @@
       font-size: 2rem;
     }
 
+    /* Grid Layout for Features and Services */
     .features, .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 2rem;
     }
 
+    /* Individual Feature/Service Card */
     .feature, .service {
       background-color: #263445;
       padding: 1.5rem;
       border-radius: 10px;
-      transition: transform 0.4s ease;
-      opacity: 0;
-      transform: translateY(40px);
+      transition: transform 0.4s ease, opacity 0.6s ease; /* Added opacity transition */
+      opacity: 0; /* Hidden by default for scroll animation */
+      transform: translateY(40px); /* Offset for scroll animation */
     }
 
     .service i {
@@ -180,6 +223,7 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Call-to-Action Section */
     .cta-section {
       background: #ffa726;
       color: #000;
@@ -197,21 +241,16 @@
       margin-bottom: 1.5rem;
     }
 
-    .cta-section button {
+    .cta-section .cta-btn { /* Specific styling for CTA section button */
       background-color: #1e2a38;
       color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      font-weight: bold;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease;
     }
 
-    .cta-section button:hover {
+    .cta-section .cta-btn:hover {
       background-color: #333;
     }
 
+    /* Footer Styles */
     footer {
       text-align: center;
       padding: 1rem;
@@ -219,6 +258,7 @@
       color: white;
     }
 
+    /* Floating WhatsApp Button */
     .floating-btn {
       position: fixed;
       right: 20px;
@@ -245,122 +285,212 @@
       transform: scale(1.1);
     }
 
+    /* --- Creative Sliding Contact Form Styles --- */
     .contact-slide-form {
       position: fixed;
       top: 0;
       right: 0;
-      transform: translateX(100%);
-      width: 350px;
-      max-width: 100%;
+      transform: translateX(100%); /* Hidden by default */
+      width: 400px; /* Increased width for better layout */
+      max-width: 90%; /* Responsive max-width */
       height: 100vh;
-      background-color: rgb(30 42 56 / 84%);
-      backdrop-filter: blur(8px);
-      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(135deg, #263445, #1e2a38); /* Subtle gradient */
+      box-shadow: -8px 0 20px rgba(0, 0, 0, 0.6); /* Deeper shadow */
       padding: 30px 25px;
-      transition: transform 0.5s ease;
+      transition: transform 0.8s ease-in-out; /* Smoother transition */
       z-index: 999;
       color: white;
-      overflow-y: auto;
+      overflow-y: auto; /* Allow scrolling for long forms */
+      border-left: 5px solid #ffa726; /* Accent border */
     }
 
     .contact-slide-form.active {
-      transform: translateX(0);
+      transform: translateX(0); /* Slide in */
     }
 
     .contact-slide-form h2 {
       margin-top: 20px;
-      font-size: 20px;
-      margin-bottom: 20px;
+      font-size: 24px; /* Larger heading */
+      margin-bottom: 25px;
       color: #ffa726;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .contact-slide-form h2::after { /* Underline effect */
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #ffa726;
+      border-radius: 2px;
+    }
+
+    .contact-slide-form label {
+      display: block;
+      margin: 15px 0 5px; /* More spacing */
+      font-size: 15px;
+      color: #ddd;
+      font-weight: 600;
     }
 
     .contact-slide-form input,
     .contact-slide-form textarea {
       width: 100%;
-      padding: 10px 15px;
+      padding: 12px 15px;
       margin-bottom: 15px;
-      background: #ffffff10;
-      border: 1px solid #ffa72655;
+      background: rgba(255, 255, 255, 0.08); /* More subtle background */
+      border: 1px solid rgba(255, 167, 38, 0.4); /* Softer border */
       border-radius: 8px;
       color: white;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 16px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-slide-form input:focus,
+    .contact-slide-form textarea:focus {
+      outline: none;
+      border-color: #ffa726; /* Highlight on focus */
+      box-shadow: 0 0 0 3px rgba(255, 167, 38, 0.3); /* Glow effect on focus */
     }
 
     .contact-slide-form textarea {
-      height: 100px;
-      resize: none;
-    }
-
-    .contact-slide-form label {
-      display: block;
-      margin: 8px 0 4px;
-      font-size: 14px;
-    }
-
-    .contact-slide-form input[type="checkbox"] {
-      margin-right: 8px;
+      height: 120px;
+      resize: vertical; /* Allow vertical resizing */
     }
 
     .contact-slide-form .checkbox-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column; /* Stack checkboxes */
+      gap: 8px;
+    }
+
+    .contact-slide-form .checkbox-group label {
+      display: flex;
+      align-items: center;
+      margin: 0; /* Reset margin from general label rule */
+      font-weight: 400; /* Lighter font for checkbox labels */
+    }
+
+    .contact-slide-form input[type="checkbox"] {
+      width: auto; /* Reset width for checkbox */
+      margin-right: 10px;
+      transform: scale(1.2); /* Slightly larger checkbox */
+      accent-color: #ffa726; /* Custom checkbox color */
     }
 
     .contact-slide-form button[type="submit"] {
       background-color: #ffa726;
       border: none;
       color: #fff;
-      padding: 10px;
+      padding: 12px;
       font-weight: bold;
       width: 100%;
       border-radius: 25px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .contact-slide-form button[type="submit"]:hover {
       background-color: #ff9800;
+      transform: translateY(-2px); /* Slight lift on hover */
     }
 
+    /* Collapse Handle - Creative Tab Design */
     .collapse-handle {
       position: absolute;
-      left: -40px;
+      left: -50px; /* Adjusted position */
       top: 50%;
-      transform: translateY(-50%) rotate(90deg);
-      background-color: #ffa726;
+      transform: translateY(-50%) rotate(90deg); /* Rotated for tab effect */
+      background-color: #2634457a;
       color: white;
       border: none;
-      padding: 8px 12px;
+      padding: 10px 18px; /* Larger padding */
       font-weight: bold;
-      border-radius: 6px 6px 0 0;
+      border-radius: 8px 8px 0 0; /* Rounded top corners */
       cursor: pointer;
       z-index: 999;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      box-shadow: -2px -2px 8px rgba(0,0,0,0.4); /* Shadow for depth */
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .collapse-handle:hover {
+      background-color: #ff9800;
+      transform: translateY(-50%) rotate(90deg) scale(1.05); /* Slight scale on hover */
+    }
+
+    /* Close button inside the form */
+    .close-form-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #ddd;
+      font-size: 28px; /* Larger icon */
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.2s ease;
+      z-index: 1001; /* Ensure it's above other elements */
+    }
+
+    .close-form-btn:hover {
+      color: #ffa726;
+      transform: rotate(90deg); /* Spin on hover */
+    }
+
+    /* Media Queries for Responsive Form */
+    @media (max-width: 768px) {
+      .contact-slide-form {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
+        border-radius: 0; /* No rounded corners on full width */
+        border-left: none; /* No left border */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Centered shadow */
+      }
+
+      .collapse-handle {
+        left: -30px; /* Adjusted for smaller screens */
+        font-size: 14px;
+        padding: 8px 15px;
+        transform: translateY(-50%) rotate(90deg); /* Keep rotation */
+      }
+
+      .contact-slide-form h2 {
+        font-size: 22px;
+      }
+
+      .contact-slide-form input,
+      .contact-slide-form textarea,
+      .contact-slide-form button[type="submit"] {
+        font-size: 15px;
+        padding: 10px 12px;
+      }
     }
 
     @media (max-width: 480px) {
       .contact-slide-form {
-        width: 100%;
         padding: 20px 15px;
       }
-
       .collapse-handle {
-        left: -30px;
+        left: -25px;
         font-size: 12px;
-        padding: 6px 10px;
+        padding: 6px 12px;
       }
-
-      .contact-slide-form h2 {
-        font-size: 18px;
-      }
-
-      .contact-slide-form input,
-      .contact-slide-form textarea {
-        font-size: 13px;
-      }
-
-      .contact-slide-form button[type="submit"] {
-        font-size: 14px;
+      .close-form-btn {
+        font-size: 24px;
+        top: 10px;
+        right: 10px;
       }
     }
   </style>
@@ -371,7 +501,7 @@
     <div class="logo">OnTime Movers</div>
     <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -410,7 +540,7 @@
   <section class="cta-section" id="contact">
     <h2>Ready to Move with Ease?</h2>
     <p>Contact OnTime Movers today for a seamless, stress-free moving experience!</p>
-    <button class="open-contact-form">Book Your Move</button>
+    <button class="cta-btn open-contact-form">Book Your Move</button>
   </section>
 
   <footer>
@@ -422,66 +552,116 @@
   </div>
 
   <div class="contact-slide-form" id="slideForm">
-    <button class="collapse-handle" id="collapseBtn">&gt;&gt;</button>
+    <button class="collapse-handle" id="collapseBtn">Get Quote</button>
+    <button class="close-form-btn" id="closeFormBtn"><i class="fas fa-times"></i></button>
     <h2>Let's Get You Moving</h2>
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
+      <label for="form-name">Your Name</label>
+      <input type="text" id="form-name" placeholder="John Doe" required>
+
+      <label for="form-phone">Phone Number</label>
+      <input type="tel" id="form-phone" placeholder="+1234567890" required>
+
+      <label>Select Services (Optional)</label>
       <div class="checkbox-group">
         <label><input type="checkbox" name="service" value="Packing"> Packing & Unpacking</label>
         <label><input type="checkbox" name="service" value="Moving"> Local Moving</label>
         <label><input type="checkbox" name="service" value="Office"> Office Relocation</label>
         <label><input type="checkbox" name="service" value="Storage"> Storage Solutions</label>
       </div>
-      <textarea placeholder="Tell us what you need..." required></textarea>
+
+      <label for="form-message">Tell us what you need...</label>
+      <textarea id="form-message" placeholder="e.g., I need to move a 2-bedroom apartment from Westlands to Kilimani on August 10th."></textarea>
+      
       <button type="submit">Send Message</button>
     </form>
   </div>
 
   <script>
-    // Scroll animations
+    // Scroll animations for elements with 'animate' class
     const animateEls = document.querySelectorAll('.animate');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.opacity = 1;
           entry.target.style.transform = "translateY(0)";
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // Stop observing once animated
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.2 }); // Trigger when 20% of element is visible
     animateEls.forEach(el => observer.observe(el));
 
-    // Typing animation
-    const text = "Your Stress-Free Move, Right on Schedule";
-    const el = document.querySelector(".typing-text");
-    let index = 0, forward = true;
-    function type() {
-      if (forward) {
-        el.textContent = text.slice(0, index++);
-        if (index > text.length) { forward = false; setTimeout(type, 1000); return; }
+    // Typing animation for hero section - Adjusted for accuracy
+    const phrases = [
+      "Your Stress-Free Move, Right on Schedule",
+      "Reliable & Efficient Moving Services",
+      "Experience a Smooth Relocation",
+      "Professional Packing & Transport"
+    ];
+    const typingElement = document.querySelector(".typing-text");
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 100; // Speed of typing
+    const deletingSpeed = 50; // Speed of deleting
+    const pauseBeforeDelete = 1500; // Pause after typing a phrase
+    const pauseBeforeType = 700; // Pause after deleting a phrase
+
+    function typeWriter() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isDeleting) {
+        // Deleting text
+        typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length; // Move to next phrase
+          setTimeout(typeWriter, pauseBeforeType); // Pause before typing next phrase
+        } else {
+          setTimeout(typeWriter, deletingSpeed);
+        }
       } else {
-        el.textContent = text.slice(0, index--);
-        if (index < 0) { forward = true; setTimeout(type, 500); return; }
+        // Typing text
+        typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(typeWriter, pauseBeforeDelete); // Pause after typing full phrase
+        } else {
+          setTimeout(typeWriter, typingSpeed);
+        }
       }
-      setTimeout(type, 100);
     }
-    type();
+    typeWriter(); // Start the typing animation
 
     // Slide form logic
     const slideForm = document.getElementById("slideForm");
     const openBtns = document.querySelectorAll('.open-contact-form');
     const collapseBtn = document.getElementById("collapseBtn");
+    const closeFormBtn = document.getElementById("closeFormBtn"); // New close button
+    const body = document.body; // Reference to the body for overlay class
 
-    openBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        slideForm.classList.add('active');
-      });
-    });
+    // Function to open the form
+    function openForm() {
+      slideForm.classList.add('active');
+      body.classList.add('form-active'); // Add class to body for overlay
+    }
 
-    collapseBtn.addEventListener('click', () => {
+    // Function to close the form
+    function closeForm() {
       slideForm.classList.remove('active');
+      body.classList.remove('form-active'); // Remove class from body
+    }
+
+    // Event listeners for opening the form
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', openForm);
     });
+
+    // Event listeners for closing the form
+    collapseBtn.addEventListener('click', closeForm);
+    closeFormBtn.addEventListener('click', closeForm); // New close button event listener
 
     // Mobile menu toggle
     const menuToggle = document.getElementById("menuToggle");
@@ -489,6 +669,15 @@
 
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            }
+        });
     });
   </script>
 </body>
