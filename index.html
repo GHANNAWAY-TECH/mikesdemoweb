@@ -652,26 +652,32 @@
     <button class="collapse-handle" id="collapseBtn">Get Quote</button>
     <button class="close-form-btn" id="closeFormBtn"><i class="fas fa-times"></i></button>
     <h2>Let's Get You Moving</h2>
-    <form id="contactForm">
-      <label for="form-name">Your Name</label>
-      <input type="text" id="form-name" placeholder="John Doe" required>
+	<form id="contactForm" action="https://formsubmit.co/ghannawaytechsystem@gmail.com" method="POST">
+	  <label for="form-name">Your Name</label>
+	  <input type="text" id="form-name" name="name" placeholder="Elvis Ndombi" required>
 
-      <label for="form-phone">Phone Number</label>
-      <input type="tel" id="form-phone" placeholder="+1234567890" required>
+	  <label for="form-phone">Phone Number</label>
+	  <input type="tel" id="form-phone" name="phone" placeholder="+254123456789" required>
 
-      <label>Select Services (Optional)</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="service" value="Packing"> Packing/Unpacking</label>
-        <label><input type="checkbox" name="service" value="Moving"> Local Moving</label>
-        <label><input type="checkbox" name="service" value="Office"> Office Relocation</label>
-      </div>
+	  <label>Select Services (Optional)</label>
+	  <div class="checkbox-group">
+		<label><input type="checkbox" name="services[]" value="Packing/Unpacking"> Packing/Unpacking</label>
+		<label><input type="checkbox" name="services[]" value="One Bedroom"> One Bedroom</label>
+		<label><input type="checkbox" name="services[]" value="Two Bedroom"> Two Bedroom</label>
+		<label><input type="checkbox" name="services[]" value="Three Bedroom"> Three Bedroom</label>
+		<label><input type="checkbox" name="services[]" value="Four Plus Bedroom"> 4+ Bedroom</label>
+		<label><input type="checkbox" name="services[]" value="Office Relocation"> Office Relocation</label>
+	  </div>
 
-      <label for="form-message">Tell us what you need...</label>
-      <textarea id="form-message" placeholder="e.g., I need to move a 2-bedroom apartment from Westlands to Kilimani on August 10th."></textarea>
-      
-      <button type="submit">Send Message</button>
+	  <label for="form-message">Tell us what you need...</label>
+	  <textarea id="form-message" name="message" placeholder="e.g., I need to move a 2-bedroom apartment from Westlands to Kilimani on August 10th."></textarea>
 
-    </form>
+	  <!-- Optional: Redirect after submit -->
+	  <!-- <input type="hidden" name="_redirect" value="https://on-timemovers.com/thank-you.html"> -->
+
+	  <button type="submit">Send Message</button>
+	</form>
+
   </div>
 
   <script>
