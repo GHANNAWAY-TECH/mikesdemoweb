@@ -474,32 +474,6 @@
       transform: translateY(-2px); /* Slight lift on hover */
     }
 
-    /* Collapse Handle - Creative Tab Design */
-    .collapse-handle {
-      position: absolute;
-      left: -50px; /* Adjusted position */
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg); /* Rotated for tab effect */
-      background-color: #2634457a; /* Changed to match form background */
-      color: white;
-      border: none;
-      padding: 10px 18px; /* Larger padding */
-      font-weight: bold;
-      border-radius: 8px 8px 0 0; /* Rounded top corners */
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: -2px -2px 8px rgba(0,0,0,0.4); /* Shadow for depth */
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .collapse-handle:hover {
-      background-color: #ff9800;
-      transform: translateY(-50%) rotate(90deg) scale(1.05); /* Slight scale on hover */
-    }
-
     /* Close button inside the form */
     .close-form-btn {
       position: absolute;
@@ -529,13 +503,6 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Centered shadow */
       }
 
-      .collapse-handle {
-        left: -30px; /* Adjusted for smaller screens */
-        font-size: 14px;
-        padding: 8px 15px;
-        transform: translateY(-50%) rotate(90deg); /* Keep rotation */
-      }
-
       .contact-slide-form h2 {
         font-size: 22px;
       }
@@ -551,11 +518,6 @@
     @media (max-width: 480px) {
       .contact-slide-form {
         padding: 20px 15px;
-      }
-      .collapse-handle {
-        left: -25px;
-        font-size: 12px;
-        padding: 6px 12px;
       }
       .close-form-btn {
         font-size: 24px;
@@ -751,7 +713,6 @@
     // Slide form logic
     const slideForm = document.getElementById("slideForm");
     const openBtns = document.querySelectorAll('.open-contact-form');
-    const collapseBtn = document.getElementById("collapseBtn");
     const closeFormBtn = document.getElementById("closeFormBtn"); // New close button
     const body = document.body; // Reference to the body for overlay class
 
@@ -773,7 +734,6 @@
     });
 
     // Event listeners for closing the form
-    collapseBtn.addEventListener('click', closeForm);
     closeFormBtn.addEventListener('click', closeForm); // New close button event listener
 
     // Mobile menu toggle
