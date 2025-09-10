@@ -1,295 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Contact OnTime Movers</title>
-    <meta name="description" content="Get in touch with OnTime Movers for a free quote on your next move. Contact us for professional house moving, office relocation, and packing services.">
-    <meta name="keywords" content="OnTime Movers contact, moving quote, contact us, professional movers, Nairobi movers, Kenya movers">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <style>
-        /* Universal Box-Sizing and Smooth Scroll */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact OnTime Movers</title>
+  <meta name="description" content="Get in touch with OnTime Movers for a free quote on your next move. Contact us for professional house moving, office relocation, and packing services.">
+  <meta name="keywords" content="OnTime Movers contact, moving quote, contact us, professional movers, Nairobi movers, Kenya movers">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* Body Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f9;
-            color: #333;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f9;
+    }
 
-        /* Header Styles */
-        header {
-            background: #1e2a38;
-            color: #ffa726;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1000;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffa726;
-        }
+    /* Hero Section Styling */
+    .hero-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://placehold.co/1200x400/1e2a38/ffffff?text=OnTime+Movers');
+      background-size: cover;
+      background-position: center;
+    }
 
-        .logo img {
-            height: 40px;
-            width: auto;
-            vertical-align: middle;
-        }
-
-        /* Navigation Styles */
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffa726;
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav {
-                width: 100%;
-                display: none;
-                flex-direction: column;
-                background-color: #1e2a38;
-                padding-top: 10px;
-            }
-            nav.active {
-                display: flex;
-            }
-            nav a {
-                margin: 10px 0;
-                padding-left: 10px;
-                text-align: left;
-            }
-        }
-
-        /* Main Content Container */
-        .contact-page-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
-            min-height: calc(100vh - 120px);
-        }
-
-        /* Contact Form Styles */
-        .contact-form {
-            background: #ffffff;
-            border: 1px solid #ddd;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form h2 {
-            margin-bottom: 30px;
-            font-size: 2rem;
-            text-align: center;
-            color: #1e2a38;
-        }
-
-        .contact-form label {
-            display: block;
-            margin: 15px 0 5px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #ffa726;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form .checkbox-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form .checkbox-group label {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-            font-weight: 400;
-            color: #333;
-        }
-
-        .contact-form input[type="checkbox"] {
-            width: auto;
-            margin-right: 10px;
-            accent-color: #ffa726;
-        }
-
-        .contact-form button[type="submit"] {
-            background-color: #ffa726;
-            border: none;
-            color: #fff;
-            padding: 15px;
-            font-weight: bold;
-            width: 100%;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background 0.3s ease;
-        }
-
-        .contact-form button[type="submit"]:hover {
-            background-color: #ff9800;
-        }
-
-        /* Footer Styles */
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #1e2a38;
-            color: white;
-        }
-
-        /* Floating WhatsApp Button */
-        .floating-btn {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 999;
-        }
-
-        .floating-btn a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            font-size: 22px;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .floating-btn a:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    /* Floating WhatsApp Button */
+    .floating-btn {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+    }
+    @media (min-width: 768px) {
+      .floating-btn {
+        right: 24px;
+        bottom: 24px;
+      }
+    }
+    .floating-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .floating-btn a:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
-<body>
+<body class="text-gray-800">
 
-    <header>
-        <div class="logo">
-            <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo">
-            <span>OnTime Movers</span>
-        </div>
-        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#testimonials">Testimonials</a>
-            <a href="index.html#about">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main class="contact-page-container">
-        <div class="contact-form">
-            <h2>Get a Quote</h2>
-            <form id="contactForm" action="https://formspree.io/f/mblkkdqe" method="POST">
-                <label for="form-name">Your Name</label>
-                <input type="text" id="form-name" name="name" placeholder="Elvis Ndombi" required>
-
-                <label for="form-email">Your Email</label>
-                <input type="mail" id="form-email" name="email" placeholder="elvis@example.com" required>
-                
-                <label for="form-phone">Phone Number</label>
-                <input type="tel" id="form-phone" name="phone" placeholder="+254740415866" required>
-
-                <label>Select Services (Optional)</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="services[]" value="One Bedroom"> One Bedroom</label>
-                    <label><input type="checkbox" name="services[]" value="Two Bedroom"> Two Bedroom</label>
-                    <label><input type="checkbox" name="services[]" value="Three Bedroom"> Three Bedroom</label>
-                    <label><input type="checkbox" name="services[]" value="Four Plus Bedroom"> 4+ Bedroom</label>
-                    <label><input type="checkbox" name="services[]" value="Office Relocation"> Office Relocation</label>
-                </div>
-
-                <label for="form-message">Tell us what you need...</label>
-                <textarea id="form-message" name="message" placeholder="e.g., I need to move a 2-bedroom apartment from Westlands to Kilimani on August 10th."></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </main>
-
-    <footer>
-        &copy; 2023 OnTime Movers. All rights reserved.
-    </footer>
-
-    <div class="floating-btn">
-        <a href="https://wa.me/254740415866" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <!-- Header -->
+  <header class="bg-[#1e2a38] text-white py-4 px-6 flex justify-between items-center relative z-10">
+    <div class="flex items-center gap-2">
+      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto" loading="lazy">
+      <span class="text-xl font-bold text-[#ffa726]">OnTime Movers</span>
     </div>
+    <button id="menuToggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="mainNav" 
+      class="hidden md:flex flex-col md:flex-row md:items-center md:gap-6 
+             absolute md:static top-full left-0 w-full bg-[#1e2a38] md:bg-transparent 
+             transition-all duration-300 ease-in-out z-50">
+      <a href="index.html" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Home</a>
+      <a href="index.html#services" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Services</a>
+      <a href="index.html#testimonials" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Testimonials</a>
+      <a href="index.html#about" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">About</a>
+      <a href="contact.html" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Contact</a>
+    </nav>
+  </header>
 
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById("menuToggle");
-        const nav = document.querySelector("header nav");
+  <!-- Hero Section -->
+  <section class="hero-section flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 text-white min-h-[250px]">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h1>
+    <p class="text-base sm:text-lg md:text-xl font-medium">Fill in the details below to request a free quote</p>
+  </section>
 
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    </script>
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+      
+	  <!-- Sidebar -->
+      <div class="w-full md:w-1/3 lg:w-2/5">
+        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-xl space-y-6">
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-map-marker-alt text-3xl sm:text-4xl text-[#1e2a38]"></i>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-[#ffa726]">Our Address</h3>
+              <p class="text-gray-700">Burudani Square, Next to Juja City Mall</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-phone-alt text-3xl sm:text-4xl text-[#1e2a38]"></i>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-[#ffa726]">Call Us</h3>
+              <p class="text-gray-700">
+                <a href="tel:+254721867609" class="hover:underline">0721867609</a> |
+                <a href="tel:+254110065625" class="hover:underline">0110065625</a>
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-envelope text-3xl sm:text-4xl text-[#1e2a38]"></i>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-[#ffa726]">Email Us</h3>
+              <p class="text-gray-700 break-words text-sm sm:text-base">
+                <a href="mailto:customercare@shwarimoversandcleaners.co.ke" 
+                   class="hover:underline break-all">
+                   customercare@shwarimoversandcleaners.co.ke
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-clock text-3xl sm:text-4xl text-[#1e2a38]"></i>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-[#ffa726]">Work Hours</h3>
+              <p class="text-gray-700">Mon - Sun: 8:00 AM - 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+	  
+      <!-- Contact Form -->
+      <div class="w-full md:w-2/3 lg:w-3/5 bg-white p-6 sm:p-8 md:p-12 rounded-lg shadow-xl">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#1e2a38] mb-6">Get a Quote</h2>
+        <form id="contactForm" action="https://formspree.io/f/mblkkdqe" method="POST" class="space-y-6">
+          <div>
+            <label for="form-name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+            <input type="text" id="form-name" name="name" placeholder="Elvis Ndombi" required
+              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ffa726] transition-colors">
+          </div>
+          <div>
+            <label for="form-email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
+            <input type="email" id="form-email" name="email" placeholder="elvis@example.com" required
+              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ffa726] transition-colors">
+          </div>
+          <div>
+            <label for="form-phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+            <input type="tel" id="form-phone" name="phone" placeholder="+254740415866" required
+              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ffa726] transition-colors">
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2">Select Services (Optional)</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <label class="flex items-center text-gray-600">
+                <input type="checkbox" name="services[]" value="One Bedroom" class="mr-2 text-[#ffa726] rounded focus:ring-0"> One Bedroom
+              </label>
+              <label class="flex items-center text-gray-600">
+                <input type="checkbox" name="services[]" value="Two Bedroom" class="mr-2 text-[#ffa726] rounded focus:ring-0"> Two Bedroom
+              </label>
+              <label class="flex items-center text-gray-600">
+                <input type="checkbox" name="services[]" value="Three Bedroom" class="mr-2 text-[#ffa726] rounded focus:ring-0"> Three Bedroom
+              </label>
+              <label class="flex items-center text-gray-600">
+                <input type="checkbox" name="services[]" value="Four Plus Bedroom" class="mr-2 text-[#ffa726] rounded focus:ring-0"> 4+ Bedroom
+              </label>
+              <label class="flex items-center text-gray-600">
+                <input type="checkbox" name="services[]" value="Office Relocation" class="mr-2 text-[#ffa726] rounded focus:ring-0"> Office Relocation
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="form-message" class="block text-gray-700 font-semibold mb-2">Tell us what you need...</label>
+            <textarea id="form-message" name="message" rows="5" placeholder="e.g., I need to move a 2-bedroom apartment from Westlands to Kilimani on August 10th."
+              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ffa726] transition-colors"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#ffa726] text-white font-bold py-4 rounded-full hover:bg-[#ff9800] transition-colors shadow-lg">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1e2a38] text-white py-6 text-center">
+    &copy; 2023 OnTime Movers. All rights reserved.
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="floating-btn">
+    <a href="https://wa.me/254740415866" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('hidden');
+    });
+
+    // Hide menu when a link is clicked
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          mainNav.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
