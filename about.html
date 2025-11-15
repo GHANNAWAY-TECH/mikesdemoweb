@@ -38,6 +38,13 @@
         background-size: cover;
         background-position: center;
     }
+	
+	.logo img {
+	  height: 40px; /* Adjust as needed */
+	  width: auto;
+	  vertical-align: middle; /* Aligns with text if any, or just centers it vertically */
+    }
+	
 
     /* WhatsApp float styling */
     .whatsapp-float {
@@ -68,7 +75,7 @@
   <header class="bg-primary-dark text-white py-4 px-6 flex justify-between items-center relative z-20 shadow-lg">
     <div class="flex items-center gap-2">
       <!-- Using a placeholder image for the logo as the original link might not work -->
-      <img src="https://placehold.co/40x40/ffa726/1e2a38?text=OTM" alt="OnTime Movers Logo" class="h-10 w-auto rounded-full" loading="lazy">
+      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto rounded-full" loading="lazy">
       <span class="text-xl font-bold text-accent-orange">OnTime Movers</span>
     </div>
     <button id="menuToggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
@@ -78,11 +85,11 @@
       class="hidden md:flex flex-col md:flex-row md:items-center md:gap-6 
              absolute md:static top-full left-0 w-full bg-primary-dark md:bg-transparent 
              transition-all duration-300 ease-in-out z-50 shadow-md md:shadow-none">
-      <a href="#home" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Home</a>
-      <a href="#services" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Services</a>
-      <a href="#testimonials" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Testimonials</a>
+      <a href="index.html" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Home</a>
+      <a href="index.html#services" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Services</a>
+      <a href="index.html#testimonials" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Testimonials</a>
       <a href="#about" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">About</a>
-      <a href="#contact" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Contact</a>
+      <a href="contact.html" class="text-white hover:text-accent-orange px-4 py-2 text-lg font-medium rounded-md transition-colors">Contact</a>
     </nav>
   </header>
 
@@ -120,7 +127,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" class="bg-accent-orange text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-orange-600 transition duration-300 transform hover:scale-105 text-center">
+          <a href="contact.html" class="bg-accent-orange text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-orange-600 transition duration-300 transform hover:scale-105 text-center">
             Get a Free Quote
           </a>
         </div>
@@ -149,7 +156,7 @@
   </footer>
 
   <!-- WhatsApp Float Button -->
-  <a class="whatsapp-float" href="https://wa.me/254712345678" target="_blank" aria-label="Chat on WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/254740415866" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
