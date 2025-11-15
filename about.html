@@ -9,13 +9,24 @@
   <link rel="icon" href="https://i.postimg.cc/7PJn7CGj/logo.png" />
 </head>
 <body>
-  <header>
-    <h2><img src="https://i.postimg.cc/7PJn7CGj/logo.png" alt="logo" class="logo">OnTime Movers</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="index.html">Services</a>
-      <a href="contact.html">Contact</a>
+  <!-- Header -->
+  <header class="bg-[#1e2a38] text-white py-4 px-6 flex justify-between items-center relative z-10">
+    <div class="flex items-center gap-2">
+      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto" loading="lazy">
+      <span class="text-xl font-bold text-[#ffa726]">OnTime Movers</span>
+    </div>
+    <button id="menuToggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="mainNav" 
+      class="hidden md:flex flex-col md:flex-row md:items-center md:gap-6 
+             absolute md:static top-full left-0 w-full bg-[#1e2a38] md:bg-transparent 
+             transition-all duration-300 ease-in-out z-50">
+      <a href="index.html" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Home</a>
+      <a href="index.html#services" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Services</a>
+      <a href="index.html#testimonials" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Testimonials</a>
+      <a href="index.html#about" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">About</a>
+      <a href="contact.html" class="text-white hover:text-[#ffa726] px-4 py-2 text-lg font-medium">Contact</a>
     </nav>
   </header>
 
@@ -34,5 +45,26 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/254712345678" target="_blank">☎</a>
+
+    <!-- Script -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('hidden');
+    });
+
+    // Hide menu when a link is clicked
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          mainNav.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
