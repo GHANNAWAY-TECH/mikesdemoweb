@@ -48,21 +48,12 @@
     }
 
     /* Header Styles */
-
-	  
-	/* Inside your <style> tags */
-    .logo img {
+	.logo img {
 	  height: 40px; /* Adjust as needed */
 	  width: auto;
 	  vertical-align: middle; /* Aligns with text if any, or just centers it vertically */
     }
 	
-	/* You might also want to remove or adjust font styles if the image is the only thing in .logo */
-
-    .logo {
-      /* font-size: 1.5rem; */ /* Consider removing this if logo is purely image */
-      /* font-weight: bold; */ /* Consider removing this if logo is purely image */
-    }
 
     /* Hero Section Styles */
     .hero {
@@ -479,8 +470,9 @@
 
   <header class="bg-[#1e2a38] text-white py-4 px-6 flex justify-between items-center relative z-10">
     <div class="flex items-center gap-2">
-      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto" loading="lazy">
-      <span class="text-xl font-bold text-[#ffa726]">OnTime Movers</span>
+      <!-- Using a placeholder image for the logo as the original link might not work -->
+      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto rounded-full" loading="lazy">
+      <span class="text-xl font-bold text-accent-orange">OnTime Movers</span>
     </div>
     <button id="menuToggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
       <i class="fas fa-bars"></i>
