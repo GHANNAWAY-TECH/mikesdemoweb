@@ -16,6 +16,23 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'primary-dark': '#1e2a38',
+            'accent-orange': '#ffa726',
+            'secondary-blue': '#4a90e2',
+          }
+        }
+      }
+    }
+  </script>
+	
   <style>
     * {
       box-sizing: border-box;
@@ -33,6 +50,14 @@
       background-size: cover;
       background-position: center;
     }
+
+	/* Header Styles */
+	.logo img {
+	  height: 40px; /* Adjust as needed */
+	  width: auto;
+	  vertical-align: middle; /* Aligns with text if any, or just centers it vertically */
+    }
+	
 
     /* Floating WhatsApp Button */
     .floating-btn {
@@ -71,8 +96,9 @@
   <!-- Header -->
   <header class="bg-[#1e2a38] text-white py-4 px-6 flex justify-between items-center relative z-10">
     <div class="flex items-center gap-2">
-      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto" loading="lazy">
-      <span class="text-xl font-bold text-[#ffa726]">OnTime Movers</span>
+      <!-- Using a placeholder image for the logo as the original link might not work -->
+      <img src="https://i.postimg.cc/3NPtZJww/logo.png" alt="OnTime Movers Logo" class="h-10 w-auto rounded-full" loading="lazy">
+      <span class="text-xl font-bold text-accent-orange">OnTime Movers</span>
     </div>
     <button id="menuToggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
       <i class="fas fa-bars"></i>
